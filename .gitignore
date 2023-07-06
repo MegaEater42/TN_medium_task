@@ -29,6 +29,9 @@ out/
 !**/src/test/**/out/
 .idea
 
+### Maven ###
+target
+
 ### Eclipse ###
 .apt_generated
 .classpath
