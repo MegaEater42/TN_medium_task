@@ -17,7 +17,7 @@ class BinarySearchTest {
     private static int[] randomArr;
 
     @BeforeAll
-    static void setUp() {
+    public static void setUp() {
         Random randomIntGenerator = new Random();
 
         randomValue = randomIntGenerator.nextInt();
@@ -44,7 +44,7 @@ class BinarySearchTest {
     }
 
     @Test
-    void testBinarySearch() {
+    public void testBinarySearch() {
         Assertions.assertEquals(-1, BinarySearch.binarySearch(emptyArr, randomValue));
         Assertions.assertEquals(-1, BinarySearch.binarySearch(emptyArr, 0, 0, randomValue));
         Assertions.assertEquals(-1, BinarySearch.binarySearch(nullArr, randomValue));
@@ -54,7 +54,7 @@ class BinarySearchTest {
     }
 
     @Test
-    void testBinarySearchArrayIndexOutOfBounds() throws IndexOutOfBoundsException {
+    public void testBinarySearchArrayIndexOutOfBounds() throws IndexOutOfBoundsException {
         IndexOutOfBoundsException thrownFromEmptyArrFromLessThanZero = Assertions.assertThrows(
                 IndexOutOfBoundsException.class,
                 () -> BinarySearch.binarySearch(emptyArr, -1, Integer.MAX_VALUE, randomValue)
@@ -78,7 +78,7 @@ class BinarySearchTest {
     }
 
     @Test
-    void testBinarySearchIllegalArgument() {
+    public void testBinarySearchIllegalArgument() {
         IllegalArgumentException thrownFromEmptyArr = Assertions.assertThrows(
                 IllegalArgumentException.class,
                 () -> BinarySearch.binarySearch(emptyArr, 1, 0, randomValue)
