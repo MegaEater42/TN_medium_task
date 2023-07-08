@@ -10,7 +10,7 @@ import java.util.stream.Stream;
 
 class DuplicatesGetterTest {
     @Test
-    public void getDuplicatesReturnsEmptyListForNullList() {
+    public void getDuplicatesReturnsEmptyListForNull() {
         Assertions.assertEquals(new ArrayList<>(), DuplicatesGetter.getDuplicates(null));
     }
 
