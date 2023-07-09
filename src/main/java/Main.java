@@ -44,8 +44,8 @@ public class Main {
         treeRootCase2.getLeftChild().getRightChild().setLeftChild(new TreeNode<>("C"));
         treeRootCase2.getLeftChild().getRightChild().setRightChild(new TreeNode<>("E"));
         treeRootCase2.setRightChild(new TreeNode<>("G"));
-        treeRootCase2.getRightChild().setRightChild(new TreeNode<>("I"));
-        treeRootCase2.getRightChild().getRightChild().setLeftChild(new TreeNode<>("H"));
+        treeRootCase2.getRightChild().setRightChild(new TreeNode<>("H"));
+        treeRootCase2.getRightChild().getRightChild().setLeftChild(new TreeNode<>("I"));
 
         System.out.println("Результат прямого обхода дерева_2 в глубину: " + TreeTraversal.preorderTraversal(treeRootCase2));
         System.out.println("Результат обратного обхода дерева_2 в глубину: " + TreeTraversal.postorderTraversal(treeRootCase2));
