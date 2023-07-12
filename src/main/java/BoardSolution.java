@@ -11,7 +11,7 @@ public class BoardSolution {
         return isSignificantDigit(token) || (token == '.');
     }
 
-    private static boolean validateCells(char[][] board) {
+    private static void validateCells(char[][] board) {
         for(char[] row : board) {
             for(char token : row) {
                 if (!isValidCell(token)) {
@@ -21,7 +21,6 @@ public class BoardSolution {
                 }
             }
         }
-        return true;
     }
 
     private static boolean isValidRow(char[] row) {
