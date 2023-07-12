@@ -23,6 +23,16 @@ public class BoardSolution {
         }
     }
 
+    private static void validateSizes(char[][] board) {
+        if (board.length != BOARD_SIZE) {
+            throw new IllegalArgumentException("Board's height isn't 9!");
+        }
+        for(char[] row : board) {
+            if(row.length != BOARD_SIZE) {
+                throw new IllegalArgumentException("One of the board's rows size isn't 9!");
+            }
+        }
+    }
     private static boolean isValidRow(char[] row) {
         Set<Character> rowSetOfChars = new HashSet<>();
         for (char token: row) {
@@ -52,9 +62,7 @@ public class BoardSolution {
     }
 
     public static boolean isValidBoard(char[][] board) {
-        if (board.length != BOARD_SIZE) {
-            throw new IllegalArgumentException("Board size isn't 9x9!");
-        }
+        validateSizes(board);
         validateCells(board);
         for(char[] row : board) {
             if (!isValidRow(row)) {
