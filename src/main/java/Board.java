@@ -70,6 +70,4 @@ public class Board {
             System.out.println(Arrays.toString(field[i]));
         }
     }
-
-
 }
