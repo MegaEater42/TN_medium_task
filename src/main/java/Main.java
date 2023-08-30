@@ -16,34 +16,15 @@ public class Main {
         System.out.println("Отсортированный массив: " + Arrays.toString(arr));
         System.out.print("Введите искомое целое: ");
         int key = scanner.nextInt();
-        System.out.println("Как выхотите искать?");
-        System.out.println("1. По всему массиву;");
-        System.out.println("2. На отрезке массива;");
-        System.out.print("> ");
-        int way = scanner.nextInt();
-        while (Arrays.binarySearch(new int[]{1, 2}, way) < 0) {
-            System.out.println("Вы ввели значение вне диапазона выбора. Попробуйте снова!");
-            System.out.print("> ");
-            way = scanner.nextInt();
-        }
-        if (way == 1) {
-            int result = BinarySearch.binarySearch(arr, key);
-            if ((result >= 0)) {
-                System.out.println("Первое искомое целое находится в массиве под индексом " + result);
-            } else {
-                System.out.println("Искомое целое не найдено!");
-            }
+        System.out.print("Введите начальный индекс: ");
+        int fromIndex = scanner.nextInt();
+        System.out.print("Введите конечный индекс: ");
+        int toIndex = scanner.nextInt();
+        int result = BinarySearch.binarySearch(arr, fromIndex, toIndex, key);
+        if ((result >= 0)) {
+            System.out.println("Первое искомое целое находится в массиве под индексом " + result);
         } else {
-            System.out.print("Введите начальный индекс: ");
-            int fromIndex = scanner.nextInt();
-            System.out.print("Введите конечный индекс: ");
-            int toIndex = scanner.nextInt();
-            int result = BinarySearch.binarySearch(arr, fromIndex, toIndex, key);
-            if ((result >= 0)) {
-                System.out.println("Первое искомое целое находится в массиве под индексом " + result);
-            } else {
-                System.out.println("Искомое целое не найдено!");
-            }
+            System.out.println("Искомое целое не найдено!");
         }
     }
 }
